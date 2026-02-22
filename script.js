@@ -8,13 +8,15 @@ function organizeCodeEditor(code){
     orgCode = code.substring(1);
     splitCode = orgCode.split(";");
 
-    const gridwidth = Number(splitCode[1]);
-    const gridheight = Number(splitCode[0]);
-    const gridpixelSize = Number(splitCode[2]);
+    const fileName = splitCode[0];
+    const gridheight = Number(splitCode[1]);
+    const gridwidth = Number(splitCode[2]);
+    const gridpixelSize = Number(splitCode[3]);
+
 
     colorCode = [];
 
-    for (let i = 3; i <splitCode.length; i++){
+    for (let i = 4; i <splitCode.length; i++){
         colorCode2 = splitCode[i].split(",");
         colorCode.push(colorCode2);
     }
@@ -23,7 +25,7 @@ function organizeCodeEditor(code){
     console.log(gridheight);
     console.log(gridpixelSize);
     console.log(colorCode);
-    return [gridwidth, gridheight, gridpixelSize, colorCode];
+    return [gridwidth, gridheight, gridpixelSize, colorCode, fileName];
 
 }
 
@@ -80,7 +82,7 @@ input.addEventListener("keypress", function(event){
         event.preventDefault();
         const code = getMessage();
         if (code[0] === "e"){
-                const [gridwidth, gridheight, gridpixelSize, colorCode] = organizeCodeEditor(code);
+                const [gridwidth, gridheight, gridpixelSize, colorCode, fileName] = organizeCodeEditor(code);
                 makeCanvasEditor(code, gridwidth, gridheight, gridpixelSize, colorCode);
         } else if(code[0] === "s"){
                 //makeCanvasScanner();
@@ -98,7 +100,8 @@ exportButton.addEventListener("click", function(event){
 
     const imageUrl = canvas.toDataURL("image/png");
     const link = document.createElement("a");
+    const fileName = document.getElementById("code").value.split(";")[0].substring(1);
     link.href = imageUrl;
-    link.download = "scratch.png";
+    link.download = fileName + ".png";
     link.click();
 });
