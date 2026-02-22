@@ -132,12 +132,11 @@ nav ul li a:active{
     size: 20px;
     box-sizing: border-box;
     box-shadow: rgba(0, 0, 0, 0.396) 0px 2px 4px, rgba(0, 0, 0, 0.396) 0px 2px 8px;
-    transition: border 0.3s ease-in-out, width 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 input[type=text]:focus, textarea:focus {
     border: 2px solid rgb(255, 126, 126);
-    width: 120%;
     box-shadow: rgba(255, 126, 126) 0px 2px 4px, rgba(255, 126, 126) 0px 2px 8px;
     outline: none;
 }
@@ -152,7 +151,7 @@ input[type=text]:focus, textarea:focus {
 }
 
 .exportButton{
-    transform: translateY(250px) translateX(600px);
+    transform: translateX(600px);
     padding: 10px 20px;
     font-size: 20px;
     font-family: 'Doto', sans-serif;
@@ -185,9 +184,9 @@ input[type=text]:focus, textarea:focus {
 
 @keyframes bobbingExport {
     0%, 100% {
-        transform: translateY(270px) translateX(600px);
+        transform:translateX(1100px) translateY(60px);
     }
     50% {
-        transform: translateY(250px) translateX(600px);
+        transform:translateX(1100px) translateY(30px);
     }
 }
