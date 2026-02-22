@@ -99,11 +99,11 @@ nav ul li a:active{
     font-size: 15px;
     list-style: column;
     transition: text-shadow 0.3s ease-in-out;
-    background-color: rgba(0, 0, 0, 0.396);
+    background-color: rgba(212, 204, 248, 0.396);
     padding: 10px 20px;
     border: 2px solid rgba(172, 153, 255);
     border-radius: 5px;
-    box-shadow: rgba(172, 153, 255, 0.396) 0px 2px 4px, rgba(0, 0, 0, 0.396) 0px 2px 8px; 
+    box-shadow: rgba(172, 153, 255, 0.396) 0px 2px 4px, rgba(175, 153, 225, 0.396) 0px 2px 8px; 
 }
 
 .content:hover{
@@ -114,6 +114,7 @@ nav ul li a:active{
     text-shadow: 2px 2px 4px rgb(255, 255, 255);
     border: 2px solid rgb(255, 126, 126);
     box-shadow: rgba(255, 126, 126) 0px 2px 4px, rgba(255, 126, 126) 0px 2px 8px;
+    color:white;
     cursor: pointer;
 }
 
